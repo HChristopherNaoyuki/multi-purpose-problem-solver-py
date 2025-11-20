@@ -1,16 +1,6 @@
 # coding: utf-8
-"""
-Multi-Purpose Problem Solver
-A comprehensive solution for various coding challenges including sports calculations,
-game rules, health assessments, and mathematical operations.
-"""
-
 class ProblemSolver:
     def calculate_sports_score(self):
-        """
-        Calculate the final score based on time remaining and current score.
-        Used in sports games where points are awarded every 5 minutes.
-        """
         a, b = input().split()
         a = int(a)
         b = int(b)
@@ -21,12 +11,6 @@ class ProblemSolver:
         print(c)
 
     def check_win_condition(self):
-        """
-        Check if a number meets win conditions:
-        - Between 50 and 70 (inclusive)
-        - Divisible by 6
-        Otherwise, it's a loss.
-        """
         a = int(input())
         if 50 <= a <= 70:
             print('win')
@@ -36,10 +20,6 @@ class ProblemSolver:
             print('lose')
 
     def check_lucky_calculation(self):
-        """
-        Check if (a - b + c) is divisible by 10.
-        If divisible, print 'Lucky', otherwise 'So-so'.
-        """
         a, b, c = map(int, input().split())
         if (a - b + c) % 10 == 0:
             print('Lucky')
@@ -47,10 +27,6 @@ class ProblemSolver:
             print('So-so')
 
     def check_height_safety(self):
-        """
-        Check if all three heights are above 170.
-        If any height is 170 or below, print 'CRASH', otherwise 'PASS'.
-        """
         a, b, c = map(int, input().split())
         if a <= 170 or b <= 170 or c <= 170:
             print('CRASH')
@@ -58,7 +34,6 @@ class ProblemSolver:
             print('PASS')
 
     def check_even_odd(self):
-        """Check if a number is even or odd."""
         n = int(input())
         if n % 2 == 0:
             print('even')
@@ -66,11 +41,6 @@ class ProblemSolver:
             print('odd')
 
     def calculate_obesity_level_simple(self):
-        """
-        Calculate obesity level using simple formula:
-        Standard weight = (height - 100) × 0.9
-        Obesity rate = (current weight - standard weight) × 100 / standard weight
-        """
         a, b = map(float, input().split())
         c = (a - 100) * 0.9
         d = (b - c) * 100 / c
@@ -82,10 +52,6 @@ class ProblemSolver:
             print('Obese')
 
     def calculate_obesity_level_detailed(self):
-        """
-        Calculate obesity level with detailed height-based standard weight calculation.
-        Different formulas for different height ranges.
-        """
         h, w = map(float, input().split())
         s = 0
         if h < 150:
@@ -103,13 +69,11 @@ class ProblemSolver:
             print("Obese")
 
     def add_two_numbers(self):
-        """Simple addition of two numbers."""
         a = int(input())
         b = int(input())
         print(a + b)
 
     def display_menu(self):
-        """Display the main menu options."""
         print("\n" + "=" * 50)
         print("MULTI-PURPOSE PROBLEM SOLVER")
         print("=" * 50)
@@ -125,7 +89,6 @@ class ProblemSolver:
         print("=" * 50)
 
     def run_example(self, choice):
-        """Run a specific example based on user choice."""
         if choice == 1:
             print("\nSports Score Calculation")
             print("-" * 30)
@@ -169,15 +132,10 @@ class ProblemSolver:
             self.add_two_numbers()
 
 def main():
-    """Main function to run the problem solver application."""
     solver = ProblemSolver()
     
     print("Welcome to Multi-Purpose Problem Solver!")
-    print("This program solves various coding problems including:")
-    print("- Sports score calculations")
-    print("- Game win conditions")
-    print("- Health assessments")
-    print("- Mathematical operations")
+    print("This program solves various coding problems.")
     
     while True:
         solver.display_menu()
