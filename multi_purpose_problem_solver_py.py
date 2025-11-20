@@ -1,3 +1,4 @@
+# coding: utf-8
 """
 Multi-Purpose Problem Solver
 A comprehensive solution for various coding challenges including sports calculations,
@@ -125,42 +126,47 @@ class ProblemSolver:
 
     def run_example(self, choice):
         """Run a specific example based on user choice."""
-        examples = {
-            1: ("Sports Score Calculation", "Enter time and score (e.g., '45 2'): "),
-            2: ("Win Condition Check", "Enter a number: "),
-            3: ("Lucky Calculation", "Enter three numbers (e.g., '15 5 10'): "),
-            4: ("Height Safety Check", "Enter three heights (e.g., '175 180 165'): "),
-            5: ("Even/Odd Check", "Enter a number: "),
-            6: ("Obesity Calculation (Simple)", "Enter height and weight (e.g., '170 65'): "),
-            7: ("Obesity Calculation (Detailed)", "Enter height and weight (e.g., '155 50'): "),
-            8: ("Add Two Numbers", "Enter two numbers separately")
-        }
-        
-        if choice in examples:
-            title, prompt = examples[choice]
-            print(f"\n{title}")
+        if choice == 1:
+            print("\nSports Score Calculation")
             print("-" * 30)
-            
-            if choice == 8:
-                print("Enter first number: ")
-                print("Enter second number: ")
-                self.add_two_numbers()
-            else:
-                print(prompt)
-                if choice == 1:
-                    self.calculate_sports_score()
-                elif choice == 2:
-                    self.check_win_condition()
-                elif choice == 3:
-                    self.check_lucky_calculation()
-                elif choice == 4:
-                    self.check_height_safety()
-                elif choice == 5:
-                    self.check_even_odd()
-                elif choice == 6:
-                    self.calculate_obesity_level_simple()
-                elif choice == 7:
-                    self.calculate_obesity_level_detailed()
+            print("Enter time and score (e.g., '45 2'): ")
+            self.calculate_sports_score()
+        elif choice == 2:
+            print("\nWin Condition Check")
+            print("-" * 30)
+            print("Enter a number: ")
+            self.check_win_condition()
+        elif choice == 3:
+            print("\nLucky Calculation")
+            print("-" * 30)
+            print("Enter three numbers (e.g., '15 5 10'): ")
+            self.check_lucky_calculation()
+        elif choice == 4:
+            print("\nHeight Safety Check")
+            print("-" * 30)
+            print("Enter three heights (e.g., '175 180 165'): ")
+            self.check_height_safety()
+        elif choice == 5:
+            print("\nEven/Odd Check")
+            print("-" * 30)
+            print("Enter a number: ")
+            self.check_even_odd()
+        elif choice == 6:
+            print("\nObesity Calculation (Simple)")
+            print("-" * 30)
+            print("Enter height and weight (e.g., '170 65'): ")
+            self.calculate_obesity_level_simple()
+        elif choice == 7:
+            print("\nObesity Calculation (Detailed)")
+            print("-" * 30)
+            print("Enter height and weight (e.g., '155 50'): ")
+            self.calculate_obesity_level_detailed()
+        elif choice == 8:
+            print("\nAdd Two Numbers")
+            print("-" * 30)
+            print("Enter first number: ")
+            print("Enter second number: ")
+            self.add_two_numbers()
 
 def main():
     """Main function to run the problem solver application."""
@@ -196,6 +202,5 @@ def main():
             print(f"An error occurred: {e}")
             print("Please try again.")
 
-# Run the program
 if __name__ == "__main__":
     main()
