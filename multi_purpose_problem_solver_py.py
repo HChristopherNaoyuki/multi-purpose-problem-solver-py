@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Multi-Purpose Problem Solver
+A comprehensive solution for various coding challenges including sports calculations,
+game rules, health assessments, and mathematical operations.
+"""
+
 class ProblemSolver:
     """
     A multi-purpose problem solver that handles various coding challenges
@@ -130,89 +137,141 @@ class ProblemSolver:
         This method provides sample inputs for testing.
         """
         print("=== Sports Score Calculation ===")
-        print("Example input: 45 2")
+        print("Input: 45 2")
+        # Simulate input for sports score calculation
+        import io
+        import sys
+        
+        # Test sports score
+        test_input = "45 2"
+        original_stdin = sys.stdin
+        sys.stdin = io.StringIO(test_input)
         self.calculate_sports_score()
+        sys.stdin = original_stdin
         
         print("\n=== Win Condition Check ===")
-        print("Example input: 60")
+        print("Input: 60")
+        original_stdin = sys.stdin
+        sys.stdin = io.StringIO("60")
         self.check_win_condition()
+        sys.stdin = original_stdin
         
         print("\n=== Lucky Calculation ===")
-        print("Example input: 15 5 10")
+        print("Input: 15 5 10")
+        original_stdin = sys.stdin
+        sys.stdin = io.StringIO("15 5 10")
         self.check_lucky_calculation()
+        sys.stdin = original_stdin
         
         print("\n=== Height Safety Check ===")
-        print("Example input: 175 180 165")
+        print("Input: 175 180 165")
+        original_stdin = sys.stdin
+        sys.stdin = io.StringIO("175 180 165")
         self.check_height_safety()
+        sys.stdin = original_stdin
         
         print("\n=== Even/Odd Check ===")
-        print("Example input: 7")
+        print("Input: 7")
+        original_stdin = sys.stdin
+        sys.stdin = io.StringIO("7")
         self.check_even_odd()
+        sys.stdin = original_stdin
         
         print("\n=== Simple Obesity Calculation ===")
-        print("Example input: 170 65")
+        print("Input: 170 65")
+        original_stdin = sys.stdin
+        sys.stdin = io.StringIO("170 65")
         self.calculate_obesity_level_simple()
+        sys.stdin = original_stdin
         
         print("\n=== Detailed Obesity Calculation ===")
-        print("Example input: 155 50")
+        print("Input: 155 50")
+        original_stdin = sys.stdin
+        sys.stdin = io.StringIO("155 50")
         self.calculate_obesity_level_detailed()
+        sys.stdin = original_stdin
         
         print("\n=== Add Two Numbers ===")
-        print("Example inputs: 5 and 3")
+        print("Inputs: 5 and 3")
+        original_stdin = sys.stdin
+        sys.stdin = io.StringIO("5\n3")
         self.add_two_numbers()
+        sys.stdin = original_stdin
+
+
+def main():
+    """Main function to run the problem solver application."""
+    solver = ProblemSolver()
+    
+    print("=" * 50)
+    print("MULTI-PURPOSE PROBLEM SOLVER")
+    print("=" * 50)
+    
+    while True:
+        print("\nSelect a function to run:")
+        print("1. Calculate Sports Score")
+        print("2. Check Win Condition")
+        print("3. Check Lucky Calculation")
+        print("4. Check Height Safety")
+        print("5. Check Even/Odd")
+        print("6. Calculate Obesity Level (Simple)")
+        print("7. Calculate Obesity Level (Detailed)")
+        print("8. Add Two Numbers")
+        print("9. Run All Examples")
+        print("0. Exit")
+        
+        try:
+            choice = input("Enter your choice (0-9): ").strip()
+            
+            if choice == '0':
+                print("Thank you for using Multi-Purpose Problem Solver!")
+                break
+            elif choice == '1':
+                print("Enter current time and current score (e.g., '45 2'):")
+                solver.calculate_sports_score()
+            elif choice == '2':
+                print("Enter a number to check win condition:")
+                solver.check_win_condition()
+            elif choice == '3':
+                print("Enter three numbers (a b c):")
+                solver.check_lucky_calculation()
+            elif choice == '4':
+                print("Enter three heights (a b c):")
+                solver.check_height_safety()
+            elif choice == '5':
+                print("Enter a number to check even/odd:")
+                solver.check_even_odd()
+            elif choice == '6':
+                print("Enter height and weight (e.g., '170 65'):")
+                solver.calculate_obesity_level_simple()
+            elif choice == '7':
+                print("Enter height and weight (e.g., '155 50'):")
+                solver.calculate_obesity_level_detailed()
+            elif choice == '8':
+                print("Enter first number:")
+                a = input()
+                print("Enter second number:")
+                b = input()
+                # Simulate the input for add_two_numbers
+                import io
+                import sys
+                original_stdin = sys.stdin
+                sys.stdin = io.StringIO(f"{a}\n{b}")
+                solver.add_two_numbers()
+                sys.stdin = original_stdin
+            elif choice == '9':
+                solver.run_all_examples()
+            else:
+                print("Invalid choice. Please select 0-9.")
+                
+            print("\n" + "-" * 50)
+            
+        except ValueError as e:
+            print(f"Input error: {e}. Please enter valid numbers.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
 
 
 # Example usage:
 if __name__ == "__main__":
-    solver = ProblemSolver()
-    
-    # Uncomment the method you want to test individually:
-    # solver.calculate_sports_score()
-    # solver.check_win_condition()
-    # solver.check_lucky_calculation()
-    # solver.check_height_safety()
-    # solver.check_even_odd()
-    # solver.calculate_obesity_level_simple()
-    # solver.calculate_obesity_level_detailed()
-    # solver.add_two_numbers()
-    
-    # Or run all examples at once:
-    # solver.run_all_examples()
-    
-    # Interactive menu for user selection
-    print("Select a function to run:")
-    print("1. Calculate Sports Score")
-    print("2. Check Win Condition")
-    print("3. Check Lucky Calculation")
-    print("4. Check Height Safety")
-    print("5. Check Even/Odd")
-    print("6. Calculate Obesity Level (Simple)")
-    print("7. Calculate Obesity Level (Detailed)")
-    print("8. Add Two Numbers")
-    print("9. Run All Examples")
-    
-    try:
-        choice = int(input("Enter your choice (1-9): "))
-        
-        if choice == 1:
-            solver.calculate_sports_score()
-        elif choice == 2:
-            solver.check_win_condition()
-        elif choice == 3:
-            solver.check_lucky_calculation()
-        elif choice == 4:
-            solver.check_height_safety()
-        elif choice == 5:
-            solver.check_even_odd()
-        elif choice == 6:
-            solver.calculate_obesity_level_simple()
-        elif choice == 7:
-            solver.calculate_obesity_level_detailed()
-        elif choice == 8:
-            solver.add_two_numbers()
-        elif choice == 9:
-            solver.run_all_examples()
-        else:
-            print("Invalid choice. Please run the program again and select 1-9.")
-    except ValueError:
-        print("Please enter a valid number.")
+    main()
