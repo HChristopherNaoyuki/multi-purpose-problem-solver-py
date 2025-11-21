@@ -120,11 +120,9 @@ Enter time and score (e.g., '45 2'): 45 2
 
 ```
 multi-purpose-problem-solver-py/
-│
 ├── multi_purpose_problem_solver_py.py
 ├── README.md
 └── media/
-    ├── screenshots/
     └── documentation/
 ```
 
